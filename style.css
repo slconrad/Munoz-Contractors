@@ -81,10 +81,22 @@ a:hover {
     justify-content: center; /* Vertical center */
     align-items: center;     /* Horizontal center */
     text-align: center;
-    padding-top: 120px;      /* Fix for the cut-off top text */
+    padding-top: 110px;      /* Fix for the cut-off top text */
 }
 
-
+/* --- MOBILE ONLY PADDING --- */
+@media (max-width: 768px) {
+    .hero {
+        /* This pushes the "Precision" text down ONLY on mobile devices */
+        padding-top: 140px; 
+        justify-content: flex-start; /* Optional: aligns content to top on mobile for better visibility */
+    }
+    
+    .hero-logo {
+        max-width: 220px; /* Scales down the logo so it takes up less vertical space */
+        margin: 10px auto;
+    }
+}
 .forest-bg-image {
     position: absolute;
     bottom: 0;
