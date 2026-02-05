@@ -442,7 +442,11 @@ a:hover {
         grid-row: span 1;
     }
 }
-
+/* --- Social Media Icons --- */
+.fa-brands, .fab {
+font-weight: 400;
+font-size: 24px;
+}
 /* --- CTA --- */
 .cta-section { padding: 100px 0; text-align: center; background: var(--primary); color: #000; }
 .cta-section h2 { font-family: var(--font-heading); font-size: 3rem; text-transform: uppercase; }
