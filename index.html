@@ -250,36 +250,33 @@ function closeLightbox() {
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-    </script>
- <script>
- // Function to toggle the menu (already in your code)
-function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('active');
-}
-
-// NEW: Auto-close logic
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const menu = document.getElementById('navLinks');
-            // Only close if the menu is currently open (has 'active' class)
-            if (menu.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
-    });
-});
-</script>
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close-btn">&times;</span>
     <img class="lightbox-content" id="lightbox-img">
     <div id="caption"></div>
 </div>
+<script>
+    // 1. Define the toggle function clearly
+    function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('active');
+    }
+
+    // 2. Add the Auto-Close logic
+    document.addEventListener('click', function (event) {
+        const navLinks = document.getElementById('navLinks');
+        const hamburger = document.querySelector('.hamburger');
+
+        // Check if the click was on a link inside the menu
+        if (event.target.closest('.nav-links a')) {
+            navLinks.classList.remove('active');
+        }
+
+        // Optional: Close menu if user clicks anywhere outside the menu/hamburger
+        if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+            navLinks.classList.remove('active');
+        }
+    });
+</script>
 </body>
 </html>

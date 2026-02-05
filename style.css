@@ -246,6 +246,7 @@ a:hover {
     margin: 0 auto;
     color: #e0e0e0; /* Light gray for readability on dark background */
     line-height: 1.8; /* Increased line height for better flow */
+    padding-top: 40px;
 }
 
 .about-text-content p {
@@ -447,18 +448,13 @@ a:hover {
 
 footer { text-align: center; padding: 20px 0; font-size: 0.8rem; color: #9d9d9d; }
 
-/* --- Mobile Responsiveness --- */
+/* Ensure this is exactly how your mobile menu is handled */
 @media (max-width: 768px) {
-    .hamburger { display: block; }
     .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%; left: 0; width: 100%;
-        background: #000; flex-direction: column; padding: 20px;
+        display: none; /* Hidden state */
+        /* ... other styles ... */
     }
-    .nav-links.active { display: flex; }
-    .hero { height: 60vh; }
-    .hero h1 { font-size: 2.2rem; }
-    .hero-logo { max-width: 200px; }
-    .hero-btns { flex-direction: column; }
+    .nav-links.active {
+        display: flex !important; /* Visible state */
+    }
 }
