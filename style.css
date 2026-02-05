@@ -444,7 +444,7 @@ a:hover {
     }
 }
 /* Fixed background for tablet and mobile */
-/* @media all and (max-width:1024px) {
+@media all and (max-width:1024px) {
     selector:after {
         content: '';
         width: 100%;
@@ -458,7 +458,7 @@ a:hover {
         top: 0;
         z-index: -1;
     }
-} */
+}
 /* --- Social Media Icons --- */
 .fa-brands, .fab {
 font-size: 24px !important;
