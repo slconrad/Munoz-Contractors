@@ -144,7 +144,7 @@ a:hover {
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-attachment: fixed;  */
+    background-attachment: fixed; /* Ensures the image scrolls with the content */
     z-index: 1;
 }
 
@@ -428,29 +428,39 @@ a:hover {
         grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
     }
 }
-@media (max-width: 1024px) {
-    /* 1. Prevent the container from hiding the image */
-    .hero {
-        background: transparent !important;
-        overflow: visible; 
-    }
 
-    /* 2. Force the image to stay at the bottom/back */
+@media (max-width: 768px) {
     .forest-bg-image {
-        position: fixed; /* Keep it stationary */
+        /* Reset positioning to avoid the 'disappearing' glitch */
+        position: absolute;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-image: url("assets/Excavator\ -\ Munoz.png") !important;
-        background-size: cover;
-        background-position: center center;
-        /* Lower the z-index to be at the very bottom */
-        z-index: -1; 
+        width: 100%;
+        height: 100%;
+        
+        /* SHRINK LOGIC: 
+           'contain' ensures the whole image fits, but might leave gaps.
+           '150% auto' is usually the sweet spot to see more trees 
+           without the image being too short. */
+        background-size: 150% auto !important;
+        
+        /* Focus on the top-center where the trees are usually tallest */
+        background-position: center top !important;
+        
+        /* Ensure it's behind everything else */
+        z-index: 1;
         display: block !important;
-        opacity: 1 !important;
-        pointer-events: none;
     }
+
+    .hero {
+        /* Ensure the hero has a set height on mobile so the image has a container */
+        min-height: 80vh; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+}
 
     /* 3. Ensure your page content doesn't have a solid background covering the hero area */
     body {
