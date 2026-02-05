@@ -124,7 +124,7 @@ a:hover {
     }
 
     .hero-logo {
-        max-width: 220px; /* Shrink logo to prevent vertical overflow */
+        max-width: 200px; /* Shrink logo to prevent vertical overflow */
         margin: 15px auto;
     }
 
