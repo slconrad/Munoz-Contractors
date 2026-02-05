@@ -36,6 +36,26 @@ a:active {
     color: #dbdbdb !important;
 }
 
+/* Target the About section specifically to tighten the top gap */
+#about.section {
+    padding-top: 40px; /* Reduced from your standard 80px */
+}
+
+/* Reduce the margin below the "About Munoz Contractors" title and divider */
+#about .section-header {
+    margin-bottom: 0px; /* Removes the bottom gap from the header block */
+}
+
+/* Tighten the quote container that follows the header */
+#about .quote-container {
+    padding-top: 20px;    /* Pulls the quote up closer to the heading */
+    padding-bottom: 30px; /* Maintains appropriate space before the body text */
+}
+
+/* Ensure the divider itself isn't pushing content too far */
+#about .divider {
+    margin-bottom: 10px; /* Reduced from standard margin */
+}
 /* Optional: Slight opacity change on hover so users know it's clickable */
 a:hover {
     opacity: 0.8;
@@ -76,30 +96,41 @@ a:hover {
 /* --- Hero Section --- */
 /* Ensure the Hero section centers all children */
 /* --- Hero Section Fix --- */
+/* --- Navigation & Hero Mobile Fixes --- */
+.navbar {
+    height: 80px; /* Fixed height to reference for padding */
+}
+
 .hero {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center;     
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    position: relative;
+    padding-top: 100px; /* Desktop padding */
     min-height: 100vh;
-    /* Reduced padding for Desktop so it doesn't look too spaced out */
-    padding-top: 80px; 
-    overflow: hidden;
 }
 
-/* --- MOBILE ONLY PADDING --- */
 @media (max-width: 768px) {
     .hero {
-        /* This pushes the "Precision" text down ONLY on mobile devices */
+        /* Pushes content further down to clear the fixed navbar on mobile */
         padding-top: 140px; 
-        justify-content: flex-start; /* Optional: aligns content to top on mobile for better visibility */
     }
-    
+
+    .sub-headline {
+        font-size: 0.9rem; /* Slightly smaller for mobile width */
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+    }
+
     .hero-logo {
-        max-width: 220px; /* Scales down the logo so it takes up less vertical space */
-        margin: 10px auto;
+        max-width: 220px; /* Shrink logo to prevent vertical overflow */
+        margin: 15px auto;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
     }
 }
 
