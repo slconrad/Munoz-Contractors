@@ -428,16 +428,33 @@ a:hover {
         grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    /* 1. Prevent the container from hiding the image */
+    .hero {
+        background: transparent !important;
+        overflow: visible; 
+    }
+
+    /* 2. Force the image to stay at the bottom/back */
     .forest-bg-image {
-        /* Change from 'cover' to '100% auto' or a specific percentage */
-        background-size: 140% auto; 
-        
-        /* Center the most important part of the image */
-        background-position: center 20%; 
-        
-        /* Optional: If the image is too short, use a darker tint to blend the bottom */
-        height: 110vh; 
+        position: fixed; /* Keep it stationary */
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("assets/Excavator\ -\ Munoz.png") !important;
+        background-size: cover;
+        background-position: center center;
+        /* Lower the z-index to be at the very bottom */
+        z-index: -1; 
+        display: block !important;
+        opacity: 1 !important;
+        pointer-events: none;
+    }
+
+    /* 3. Ensure your page content doesn't have a solid background covering the hero area */
+    body {
+        background-color: var(--dark);
     }
 }
 @media (max-width: 600px) {
