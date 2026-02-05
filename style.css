@@ -22,6 +22,25 @@ body {
     overflow-x: hidden;
 }
 
+/* Forces all links to be white and removes default underlines if desired */
+a {
+    color: #ebebeb !important;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Ensures the color stays white even after being clicked or hovered */
+a:visited, 
+a:hover, 
+a:active {
+    color: #dbdbdb !important;
+}
+
+/* Optional: Slight opacity change on hover so users know it's clickable */
+a:hover {
+    opacity: 0.8;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -55,16 +74,16 @@ body {
 .hamburger { display: none; color: var(--primary); font-size: 1.5rem; cursor: pointer; }
 
 /* --- Hero Section --- */
+/* Ensure the Hero section centers all children */
 .hero {
-    height: 75vh;
-    min-height: 550px;
-    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: center; /* Vertical center */
+    align-items: center;     /* Horizontal center */
     text-align: center;
-    background-color: var(--dark);
+    padding-top: 120px;      /* Fix for the cut-off top text */
 }
+
 
 .forest-bg-image {
     position: absolute;
@@ -377,7 +396,7 @@ body {
 .cta-section p { font-size: 1.2rem; margin-bottom: 25px; }
 .large-btn { background: #000; color: #fff; font-size: 1.2rem; }
 
-footer { text-align: center; padding: 20px 0; font-size: 0.8rem; color: #555; }
+footer { text-align: center; padding: 20px 0; font-size: 0.8rem; color: #9d9d9d; }
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
