@@ -145,6 +145,8 @@ a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
+    background-attachment: fixed;
+    
 }
 
 .hero-overlay {
