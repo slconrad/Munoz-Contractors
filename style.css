@@ -88,7 +88,7 @@ a:hover {
 @media (max-width: 768px) {
     .hero {
         /* This pushes the "Precision" text down ONLY on mobile devices */
-        padding-top: 140px; 
+        padding-top: 110px; 
         justify-content: flex-start; /* Optional: aligns content to top on mobile for better visibility */
     }
     
