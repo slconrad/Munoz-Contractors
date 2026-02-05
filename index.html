@@ -255,6 +255,27 @@ function closeLightbox() {
             document.getElementById('navLinks').classList.toggle('active');
         }
     </script>
+ <script>
+ // Function to toggle the menu (already in your code)
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+}
+
+// NEW: Auto-close logic
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const menu = document.getElementById('navLinks');
+            // Only close if the menu is currently open (has 'active' class)
+            if (menu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+});
+</script>
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close-btn">&times;</span>
     <img class="lightbox-content" id="lightbox-img">

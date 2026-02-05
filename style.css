@@ -260,7 +260,7 @@ a:hover {
 }
 /* --- Pull Quote Styling --- */
 .quote-container {
-    padding: 60px 20px;
+    padding: 10px 20px;
     display: flex;
     justify-content: center;
 }
