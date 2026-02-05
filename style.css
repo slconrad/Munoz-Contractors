@@ -144,7 +144,7 @@ a:hover {
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; /* Ensures the image scrolls with the content */
+    /* background-attachment: fixed;  */
     z-index: 1;
 }
 
